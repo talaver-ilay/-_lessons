@@ -1,7 +1,6 @@
 #include <iostream>
 
 // using namespace std;
-// Time 3:27:23
 
 int main(){
    

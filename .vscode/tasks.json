@@ -3,35 +3,14 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "Build GCC 14.1.0",
-			"command": "C:\\mingw64\\bin\\g++.exe",
+			"label": "G++ 13.3.0",
+			"command": "/usr/bin/g++-13",
 			"args": [
-				"-g",
-				"-std=c++20",
-				"${workspaceFolder}\\*.cpp",
-				"-o",
-				"${fileDirname}\\rooster.exe"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$gcc"
-			],
-			"group": "build",
-			"detail": "compiler: C:\\mingw64\\bin\\g++.exe"
-		},
-		{
-			"type": "cppbuild",
-			"label": "Build Clang 18.1.5",
-			"command": "C:\\mingw64\\bin\\clang++.exe",
-			"args": [
-				"-fcolor-diagnostics",
-				"-fansi-escape-codes",
+				"-fdiagnostics-color=always",
 				"-g",
 				"${file}",
 				"-o",
-				"${fileDirname}\\${fileBasenameNoExtension}.exe"
+				"${fileDirname}/${fileBasenameNoExtension}"
 			],
 			"options": {
 				"cwd": "${fileDirname}"
@@ -40,28 +19,7 @@
 				"$gcc"
 			],
 			"group": "build",
-			"detail": "compiler: C:\\mingw64\\bin\\clang++.exe"
-		},
-		{
-			"type": "cppbuild",
-			"label": "Build with MSVC",
-			"command": "cl.exe",
-			"args": [
-				"/Zi",
-				"/std:c++latest",
-				"/EHsc",
-				"/Fe:",
-				"${fileDirname}\\rooster.exe",
-				"${workspaceFolder}\\*.cpp"
-			],
-			"options": {
-				"cwd": "${fileDirname}"
-			},
-			"problemMatcher": [
-				"$msCompile"
-			],
-			"group": "build",
-			"detail": "compiler: cl.exe"
+			"detail": "compiler: /usr/bin/g++-13"
 		}
 	]
 }
