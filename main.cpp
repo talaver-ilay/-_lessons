@@ -1,47 +1,26 @@
 #include <iostream>
-
-// using namespace std;
-int count_x(const char* p,const char x){
-   if(p==nullptr){
-      std::cout<<"Zero!"<<std::endl;
-      return 0;
-   }
-   int count = 0;
-   for(;*p!=0;++p){
-      if(*p==x){
-         ++count;
-      }
-   }
-   return count;
-}
+#include <limits>
+#include <cmath>
+// std::cout<<std::numeric_limits<int>::min()<<std::endl;
 int main(){
-   // int x[] = {0,1,2,3,4,5,6,7,8,9};
-   // for(const auto& i:x){
-   //    std::cout<<i<<"\n";
-   // }
-   char* x = nullptr;
-   std::cout<<count_x("Hallo World",'o')<<std::endl;
-   std::cout<<count_x(x,'l')<<std::endl;
-}  
-// #include <iostream>
-
-// int count_x(const char* p,const char x){
-//    if(p==nullptr){
-//       std::cout<<"Zero!"<<std::endl;
-//       return 0;
-//    }
-//    int count = 0;
-//    while(*p){
-//       if(*p==x){
-//          ++count;
-//       }
-//       ++p;
-//    }
-//    return count;
-// }
-
-// int main(){
-//    char* x = nullptr;
-//    std::cout<<count_x("Hallo World",'o')<<std::endl;
-//    std::cout<<count_x(x,'l')<<std::endl;
-// }  
+  double wight{7.4};
+  double save{4};
+//   std::cout<<std::floor(wight)<<std::endl;
+//   std::cout<<std::ceil(wight)<<std::endl;
+   // std::cout<<std::abs(wight)<<std::endl;
+   // std::cout<<std::abs(save)<<std::endl;
+   // std::cout<<std::pow(2,2)<<std::endl; 
+   // std::cout<<std::log2(16)<<std::endl;
+// auto x = (wight>save)?wight:save; 
+// std::cout<< x <<std::endl;
+// std::cout<<std::numeric_limits<size_t>::min()<<std::endl;
+// std::cout<<std::numeric_limits<size_t>::max()<<std::endl;
+// char ch1[]{"Hallo"};
+// char ch2[] = {'H','a','l','l','o','\0'};
+// char ch3[6] = {'H','a','l','l','o','\0'};
+// std::cout<<ch1<<std::endl;
+// std::cout<<ch2<<std::endl;
+// std::cout<<ch3<<std::endl;
+char* ch = {"Hallo"};
+std::cout<<*(ch+1)<<std::endl;
+}
