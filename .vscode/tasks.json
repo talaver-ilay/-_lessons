@@ -3,7 +3,7 @@
 	"tasks": [
 		{
 			"type": "cppbuild",
-			"label": "G++ 13.3.0",
+			"label": "g++-13 build",
 			"command": "/usr/bin/g++-13",
 			"args": [
 				"-fdiagnostics-color=always",
