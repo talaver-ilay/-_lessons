@@ -9,6 +9,8 @@
 				"-fdiagnostics-color=always",
 				"-g",
 				"${file}",
+				"-fmodules-ts",
+				"-std=c++20",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}"
 			],
