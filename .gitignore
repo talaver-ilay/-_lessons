@@ -3,3 +3,9 @@
 *.ilk
 *.pdb
 *.obj
+*.a
+main
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CMakeFiles/
