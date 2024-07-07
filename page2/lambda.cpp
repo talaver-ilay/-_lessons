@@ -21,16 +21,16 @@
 int main(){
     double a{1.2};
     double b{7.4};
-    std::cout<<[a,b]()->double{return a + b;}()<<std::endl;
+    
+    std::cout<<[a,b]()->double{return a + b;}()<<std::endl; // копирует переменную а и b
     
     [&a](){++a;}();
-    std::cout<<a<<std::endl;
+    std::cout<<a<<std::endl; // ссылка на переменную 'а'
     
     [&](){++b;}();
-    std::cout<<b<<std::endl;
+    std::cout<<b<<std::endl; // ссылка на любое значение в области видимости
 
-    
-    std::cout<<[=](){return a;}()<<std::endl;
+    std::cout<<[=](){return a;}()<<std::endl; // копирует любую переменную в области видимости
     
     return 0;
 }
