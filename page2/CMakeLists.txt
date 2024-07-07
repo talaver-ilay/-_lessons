@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.3) # Проверка версии CMake.
 									# Если версия установленой программы
 # 									# старее указаной, произайдёт аварийный выход.
+set(CMAKE_CXX_STANDARD 20)
+# set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_BUILD_TYPE debug)
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++20")
 
 # project(main)			# Название проекта
 
@@ -14,5 +18,5 @@ cmake_minimum_required(VERSION 3.3) # Проверка версии CMake.
                                     
 # target_link_libraries(main compare)		# Линковка программы с библиотекой
 
-set(SOURCE_EXE template.cpp)
-add_executable(template ${SOURCE_EXE})	
+set(SOURCE_EXE concepts.cpp)
+add_executable(concepts ${SOURCE_EXE})	
