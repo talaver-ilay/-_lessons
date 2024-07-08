@@ -19,4 +19,4 @@ set(CMAKE_CXX_STANDARD 23)
 # target_link_libraries(main compare)		# Линковка программы с библиотекой
 
 set(SOURCE_EXE class.cpp)
-add_executable(concepts ${SOURCE_EXE})	
+add_executable(class ${SOURCE_EXE})	
