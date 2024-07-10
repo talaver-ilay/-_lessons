@@ -1,11 +1,7 @@
 # Untracked files:
-#.vscode
-*.ilk
-*.pdb
-*.obj
-*.a
-main
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-CMakeFiles/
+# Ignore all
+*
+# Unignore
+!*.cpp
+!CMakeLists.txt
+!*.h
