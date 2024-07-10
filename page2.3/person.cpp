@@ -1,11 +1,13 @@
 #include "person.h"
 
     Person::Person(){std::cout<<"Constructor "<<this->first_name<<"\n";};
-    Person::Person(std::string& first_name, std::string& last_name){
+
+    Person::Person(std::string first_name, std::string last_name){
         this->first_name = first_name;
         this->last_name = last_name;
         std::cout<<"Constructor "<<this->first_name<<"\n";
     }
+    
     Person::~Person(){std::cout<<"Destructor "<<this->first_name<<"\n";}
 
     std::string Person::set_first_name(std::string& first_name){

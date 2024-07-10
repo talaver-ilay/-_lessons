@@ -7,7 +7,7 @@ project(class)			# Название проекта
 
 set(SOURCE_EXE class.cpp)		# Установка переменной со списком исходников для исполняемого файла
                                    
-set(SOURCE_LIB person.cpp)			# Тоже самое, но для библиотеки
+set(SOURCE_LIB person.cpp player.cpp)			# Тоже самое, но для библиотеки
                                     
 add_library(person STATIC ${SOURCE_LIB})	# Создание статической библиотеки с именем foo
                                     
