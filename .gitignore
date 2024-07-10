@@ -1,8 +1,8 @@
-# Untracked files:
-# Ignore all
-*.*
-*
-# Unignore
-!*.cpp
-!CMakeLists.txt
-!*.h
+# # Untracked files:
+# # Ignore all
+# *.*
+# *
+# # Unignore
+# !*.cpp
+# !CMakeLists.txt
+# !*.h
