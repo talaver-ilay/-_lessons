@@ -12,3 +12,6 @@ Shape::~Shape(){
 void Shape::draw()const{
         std::cout<<"Shape::draw() called. Drawing "<<description<<std::endl;
 }
+void Shape::draw(int color)const{
+        std::cout<<"Shape::draw() with color depth : "<<color<<std::endl;
+}
