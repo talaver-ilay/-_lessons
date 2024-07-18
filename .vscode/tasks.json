@@ -8,7 +8,7 @@
         "args": [
           "-std=c++23",
           "-g",
-          "${workspaceFolder}/page4/*.cpp",
+          "${workspaceFolder}/thread/page2.2/*.cpp",
           "-o",
           "${fileDirname}/${fileBasenameNoExtension}"
         ],
