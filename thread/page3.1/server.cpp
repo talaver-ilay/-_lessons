@@ -17,5 +17,12 @@ int main(int argc, char** argv){
     bind(MasterSocket,(struct sockaddr*) (&SockAddr),sizeof(SockAddr));
 
     listen(MasterSocket,SOMAXCONN);
+    while(true){
+        int SlaveSocket = accept(MasterSocket,0,0);
+        int Buffer[5] = {0,0,0,0,0};
+        recv(SlaveSocket, Buffer, 4, MSG_NOSIGNAL);
+        //shutdown(SlaveSocket, );
+        std::cout<<Buffer<<std::endl;
+    }
     return 0;
 }
