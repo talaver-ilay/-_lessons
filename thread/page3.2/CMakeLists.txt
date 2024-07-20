@@ -7,6 +7,6 @@ project(server)			# Название проекта
 
 set(SOURCE_EXE server.cpp)		# Установка переменной со списком исходников для исполняемого файла
 set(SOURCE_EXE2 client.cpp)                                   
-                                    
+set(CMAKE_BUILD_TYPE Debug)                    
 add_executable(server ${SOURCE_EXE})	# Создает исполняемый файл с именем main
 add_executable(client ${SOURCE_EXE2})	# Создает исполняемый файл с именем main

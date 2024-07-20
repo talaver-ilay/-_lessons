@@ -2,8 +2,15 @@
 #include <sys/types.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
+#include <unistd.h>
 
 
+// strace execute_name посмотреть системные вызовы
+// telnet 127.0.0.0 12345 подключиться к серверу
+// fuser -k 12345/tcp закрыть все соединения на порт
+// ps aux | fgrep server
+// lsof -p PID
+// gdb -p PID
 int main(int argc, char** argv){
     int MasterSocket = socket(
         AF_INET,/* IPv4 */
@@ -19,10 +26,13 @@ int main(int argc, char** argv){
     listen(MasterSocket,SOMAXCONN);
     while(true){
         int SlaveSocket = accept(MasterSocket,0,0);
-        int Buffer[5] = {0,0,0,0,0};
-        recv(SlaveSocket, Buffer, 4, MSG_NOSIGNAL);
-        //shutdown(SlaveSocket, );
+        std::cout<<SlaveSocket<<std::endl;
+        char Buffer[100] = {0};
+        recv(SlaveSocket, Buffer, sizeof(Buffer), MSG_NOSIGNAL);
+        send(SlaveSocket,Buffer,sizeof(Buffer),MSG_NOSIGNAL);
+        shutdown(SlaveSocket, SHUT_RDWR);
+        close(SlaveSocket); 
         std::cout<<Buffer<<std::endl;
-    }
+    }   
     return 0;
 }
