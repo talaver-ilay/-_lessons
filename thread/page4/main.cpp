@@ -10,7 +10,7 @@
 #include <errno.h>
 #define UNIX_SOCK_PATH "/tmp/echo.sock"
 
-static void accept_conn_cb(struct evconnlistener *listener,
+static void accept_conn_cb(struct evconnlistener *listener, //callback
     evutil_socket_t fd,
     struct sockaddr *address,
     int socklen,
@@ -19,6 +19,9 @@ static void accept_conn_cb(struct evconnlistener *listener,
         struct bufferevent *bev = bufferevent_socket_new(base, fd, BEV_OPT_CLOSE_ON_FREE);
     }
 
+static void accept_error_cb(struct evconnlistener *, void *){
+
+}
 
 int main(int argc, char** argv){
     struct event_base *base = event_base_new();
@@ -31,7 +34,8 @@ int main(int argc, char** argv){
     struct evconnlistener *listener = evconnlistener_new_bind(base,
         accept_conn_cb, NULL, 
         LEV_OPT_CLOSE_ON_FREE | LEV_OPT_REUSEABLE, 
-        -1, (struct sockader*)&sun, sizeof(sun));
+        -1, (struct sockaddr*)&sun, sizeof(sun));
     evconnlistener_set_error_cb(listener, accept_error_cb);
+    event_base_dispatch(base);
     return 0;
 }
