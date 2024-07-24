@@ -7,6 +7,5 @@ class Singleton{
         Singleton(){
             std::cout<<"Constructor called"<<std::endl;
         };
-    protected:
         static Singleton* _instance;
 };
