@@ -17,11 +17,20 @@ static void accept_conn_cb(struct evconnlistener *listener, //callback
     void *ctx){
         struct event_base *base = evconnlistener_get_base(listener);
         struct bufferevent *bev = bufferevent_socket_new(base, fd, BEV_OPT_CLOSE_ON_FREE);
+        bufferevent_setcb(bev, echo_read_cb, NULL, echo_write_cb, NULL);
+        bufferevent_enable(bev, EV_READ | EV_WRITE);
+
     }
 
-static void accept_error_cb(struct evconnlistener *, void *){
-
-}
+static void accept_error_cb(struct evconnlistener *listener, //callback
+    evutil_socket_t fd,
+    struct sockaddr *address,
+    int socklen,
+    void *ctx){
+        struct event_base *base = evconnlistener_get_base(listener);
+        int err = EVUTIL_SET_SOCKET_ERROR();
+        
+    }
 
 int main(int argc, char** argv){
     struct event_base *base = event_base_new();
