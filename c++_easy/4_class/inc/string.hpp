@@ -8,7 +8,7 @@ namespace cpp_ns{
     public:
         string();
         string(const char*);
-        string(const string&);
+        string(const string&); // конструктор копирования
         string &operator=(const string&); // присваивания копированием
         ~string();
 
