@@ -5,6 +5,8 @@
 #include <unistd.h>
 #include <vector>
 #include <string.h>
+#include <sstream>
+
 int main(int argc, char** argv){
     int Socket = socket(
         AF_INET,/* IPv4 */
@@ -17,7 +19,8 @@ int main(int argc, char** argv){
 
     char wBuffer[100] = {0};
     char rBuffer[100] = {0};
-    std::cin>>wBuffer;  
+
+    std::cin.getline(wBuffer, sizeof(wBuffer));  
     int con = connect(Socket,(struct sockaddr*)(&SockAddr),sizeof(SockAddr));
     send(Socket,wBuffer,sizeof(wBuffer),MSG_NOSIGNAL);
     recv(Socket,rBuffer,sizeof(rBuffer),MSG_NOSIGNAL);
