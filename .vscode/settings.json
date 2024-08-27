@@ -83,6 +83,8 @@
         "set": "cpp",
         "unordered_set": "cpp",
         "__tree": "cpp",
-        "io_context": "cpp"
+        "io_context": "cpp",
+        "codecvt": "cpp",
+        "future": "cpp"
     }
 }

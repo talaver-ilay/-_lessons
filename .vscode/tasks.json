@@ -8,7 +8,7 @@
         "args": [
           "-std=c++23",
           "-g",
-          "${workspaceFolder}/c++_base/my_list/*.cpp",
+          "${workspaceFolder}/c++_easy/20_array/src/*.cpp",
           "-o",
           "${fileDirname}/${fileBasenameNoExtension}"
         ],
